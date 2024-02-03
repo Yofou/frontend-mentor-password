@@ -1,7 +1,9 @@
 <template>
   <label class="bg-dark-grey p-4 md:py-[1.2rem] md:px-8 flex justify-between items-center cursor-pointer">
     <h2 class="heading-m md:heading-l text-almost-white font-bold truncate">
-      <slot />
+      <slot>
+        <span class="text-almost-white/25">P4$5W0rD!</span>
+      </slot>
     </h2>
 
     <div class="flex justify-end gap-4 items-center">

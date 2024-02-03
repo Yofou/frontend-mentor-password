@@ -17,15 +17,17 @@ const {
   includeSymbols,
 
   genPassword,
-  onCopy
+  onCopy,
 } = usePassword();
 
 const canGenerate = computed(() => {
-  return includeUppercase.value ||
-  includeLowercase.value ||
-  includeNumbers.value ||
-  includeSymbols.value
-})
+  return (
+    includeUppercase.value ||
+    includeLowercase.value ||
+    includeNumbers.value ||
+    includeSymbols.value
+  );
+});
 </script>
 
 <template>
@@ -34,12 +36,14 @@ const canGenerate = computed(() => {
     class="w-full min-h-screen px-4 md:px-0 flex flex-col items-center bg-[#08070B] pt-16 md:pt-[8.3rem]"
   >
     <section class="w-full max-w-[33.75rem]">
-      <h2 class="heading-m !text-[1rem] md:!text-[1.5rem] font-bold text-[#817D92] text-center">
+      <h2
+        class="heading-m !text-[1rem] md:!text-[1.5rem] font-bold text-[#817D92] text-center"
+      >
         Password Generator
       </h2>
-      <PassDisplay class="w-full mt-8" v-model="length" @copy="onCopy">{{
-        password
-      }}</PassDisplay>
+      <PassDisplay class="w-full mt-8" v-model="length" @copy="onCopy">
+        <span v-if="password.length > 0">{{ password }}</span>
+      </PassDisplay>
     </section>
 
     <section
@@ -60,7 +64,9 @@ const canGenerate = computed(() => {
       >
       <PassStrength class="mt-8" :strength="strengthScore" />
 
-      <Button :disabled="!canGenerate" class="mt-4 md:mt-8" @click="genPassword">Generate</Button>
+      <Button :disabled="!canGenerate" class="mt-4 md:mt-8" @click="genPassword"
+        >Generate</Button
+      >
     </section>
   </main>
 </template>
