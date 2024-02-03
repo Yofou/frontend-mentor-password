@@ -7,14 +7,14 @@ const symbols = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
 
 export const usePassword = () => {
   const password = ref("");
-  const length = ref(10);
+  const length = ref(1);
 
-  const includeUppercase = ref(true);
-  const includeLowercase = ref(true);
-  const includeNumbers = ref(true);
+  const includeUppercase = ref(false);
+  const includeLowercase = ref(false);
+  const includeNumbers = ref(false);
   const includeSymbols = ref(false);
 
-  const strengthScore = ref(3);
+  const strengthScore = ref(0);
   const getStrength = () => {
     let count = 0;
 

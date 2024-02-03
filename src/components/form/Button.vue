@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex gap-6 items-center justify-center uppercase body text-[1rem] md:!text-[1.125rem] text-dark-grey bg-neon-green/100 border-2 border-neon-green hover:bg-neon-green/0 hover:text-neon-green transition-colors py-4 md:py-5"
+    class="flex font-bold gap-6 items-center justify-center uppercase body text-[1rem] md:!text-[1.125rem] text-dark-grey bg-neon-green/100 border-2 border-neon-green hover:bg-neon-green/0 hover:text-neon-green transition-colors py-4 md:py-5"
     @click="onClick"
     :disabled="props.disabled"
   >
